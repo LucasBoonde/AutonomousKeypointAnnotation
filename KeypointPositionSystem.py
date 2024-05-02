@@ -52,16 +52,16 @@ def BBoxFromCamera(camera, scene, object):
     w, h = (np.linalg.norm(maxX-minX), np.linalg.norm(maxY-minY))
     
     render = scene.render
-    pCenterX = str(((render.resolution_x)-centerX*render.resolution_x)/render.resolution_x)
+    pCenterX = str((centerX*render.resolution_x)/render.resolution_x)
     pCenterY = str(((render.resolution_y)-centerY*render.resolution_y)/render.resolution_y)
     pW = str((w*render.resolution_x)/render.resolution_x)
     pH = str((h*render.resolution_y)/render.resolution_y)
     #print("COCO Bounding Box:  (centerX: "+pCenterX+", centerY: "+pCenterY+") - (width: "+pW+", height: "+pH+")")
     
-    render.border_min_x = minX
-    render.border_min_y = minY
-    render.border_max_x = maxX
-    render.border_max_y = maxY
+    #render.border_min_x = minX
+    #render.border_min_y = minY
+    #render.border_max_x = maxX
+    #render.border_max_y = maxY
     
     return pCenterX, pCenterY, pW, pH
     
