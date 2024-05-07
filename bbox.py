@@ -24,7 +24,7 @@ def Keypoints(imagePath, cx, cy, w, h, keypoints):
     for i in range(0, len(keypoints), 2):
         kpX = int(keypoints[i] * imageW)
         kpY = int(keypoints[i+1]* imageH)
-        cv.circle(image, (kpX, kpY), 3, (0,0,255), -1)
+        cv.circle(image, (kpX, kpY), 10, (0,0,255), -1)
     
     cv.imshow("BBOX and Keypoints", image)
     cv.waitKey(0)
@@ -38,6 +38,6 @@ def main(filePath, imagePath):
             Keypoints(imagePath, cx, cy, w, h, keypoints)
 
 if __name__ == "__main__":
-    filePath ="aircraft_0060.txt"
-    imagePath ="aircraft_0060.jpg"
+    filePath ="data/labels/aircraft_0019.txt"
+    imagePath ="data/images/aircraft_0019.jpg"
     main(filePath, imagePath)
